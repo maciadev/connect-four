@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <h1>Start Project</h1>
+      <h1>Start Project v.0.0.1</h1>
     </>
   )
 }
