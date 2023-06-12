@@ -1,15 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+const board = Array(42).fill(null)
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <h1>Start Project v.1</h1>
-    </>
+    <main className='board'>
+      <h1>Connect 4</h1>
+      <section className='game'>
+        {
+          board.map((_, index) => {
+            return (
+              <div className='cell' key={index}>
+                <span className='cell__content'>
+                  {index}
+                </span>
+              </div>
+            )
+          })
+        }
+      </section>
+    </main>
   )
 }
 
