@@ -1,3 +1,3 @@
 # connect-four
 
-Developing table game connect-4 using React
+### Table-game Connect 4 developed in React
