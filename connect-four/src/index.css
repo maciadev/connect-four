@@ -5,8 +5,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: rgba(26, 24, 24, 0.87);
+  background-color: #f5f5f5;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,6 +15,9 @@
   -webkit-text-size-adjust: 100%;
 }
 
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -25,6 +28,31 @@ body {
   min-height: 100vh;
 }
 
+h1.title{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 40px;
+
+}
+
+.player_turn {
+  display:flex;
+  margin:14px auto;
+}
+
+.player_turn .turn{
+  width: 70px;
+  height: 70px;
+  padding: 20px;
+  margin: 0px 20px;
+  place-items:center;
+}
+
+.player_turn .player_to_act {
+  background-color:rgb(107, 240, 245);
+  border: 3px solid rgb(38, 38, 238);
+  border-radius: 10px;
+}
+
 .board {
   display: grid;
   margin: 40px auto;
@@ -33,6 +61,106 @@ body {
 
 .board .game {
   display:grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 10px;
+  padding:17px;
+  background-color:rgb(26, 117, 202);
+  border-radius:10%;
+  
+}
+
+table {
+  border-spacing:0px;
+}
+
+.cell__svg{
+  width:100%;
+  height:100%;
+  border-radius: 50%;
+  background-color:#f5f5f5; 
+}
+
+.cell {
+  width: 80px;
+  height: 80px;
+  padding: 9px;
+  cursor: pointer;
+}
+
+.cell.hovered_red_circle circle.empty-slot {
+  fill:rgba(255, 0, 0, 0.377);
+}
+
+.cell.hovered_yellow_circle circle.empty-slot {
+  fill:rgba(255, 230, 0, 0.377);
+}
+
+.empty-slot {
+  fill: transparent;
+}
+
+circle.red_circle {
+  fill: red;
+}
+
+circle.yellow_circle {
+  fill: yellow;
+}
+
+section.buttons {
+  margin-top:30px;
+}
+
+button {
+  background-color:transparent;
+  border: 1px solid darkgray;
+  border-radius: 5%;
+  padding:10px;
+  font-size: 17px;
+}
+
+button.btn-winner {
+  background-color: darkgray;
+  border-radius: 5%;
+  color:#eee;
+}
+
+button:hover {
+  background-color:rgba(48, 48, 48, 0.87);
+  color: #f5f5f5;
+  transition: 0.3s ease-in-out;
+  font-size:19px;
+}
+
+.winner {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.winner .text {
+  background: rgb(27, 27, 27);
+  height: 300px;
+  width: 320px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: rgb(219, 216, 216);
+}
+
+.winner .text .winner__logo {
+  display:block;
+  justify-content:center;
+  border: 0.5px solid darkgray;
+  height: 90px;
+  width: 90px;
+  border-radius: 5%;
+  padding: 15px;
 }
